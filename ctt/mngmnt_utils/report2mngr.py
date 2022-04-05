@@ -2,7 +2,7 @@
 
 def format_report2mnger(
         reports, config, topic, target_date, report2mngr_dir=".",
-        report2mngr_name="./report2mngr_{}.html"):
+        report2mngr_name="report2mngr_{}.html"):
     """
 
     :param reports: pd.DataFrame. The report from Google Sheet which includes the following columns:
@@ -39,5 +39,7 @@ def format_report2mnger(
     report2mngr_html = css + body.format(table=table, week=str(target_date.date()), topic=topic)
 
     path = "{}/{}".format(report2mngr_dir, report2mngr_name.format(str(target_date.date())))
+    print(
+        "The generated report is stored at {}.".format(path))
     with open(path, "w") as f:
         f.write(report2mngr_html)
