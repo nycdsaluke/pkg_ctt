@@ -10,6 +10,7 @@ setup(
         "jupyter",
         "google-api-python-client",
         "google_auth_oauthlib",
+        "oauth2client",
         "pyyaml"
     ]
 )
